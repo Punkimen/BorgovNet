@@ -523,7 +523,40 @@ img.mfp-img {
 }
 
 .header__up-enter {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .header-lang__list {
+  display: flex;
+}
+
+.header .header-lang__elem {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.header .header-lang__elem:not(:last-child) {
+  margin-right: 15px;
+}
+
+.header .header-lang__link {
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+}
+
+.header .header-lang__link:hover {
+  color: #E72A00;
+}
+
+.header .header-lang__link.active {
+  color: #E72A00;
 }
 
 .header__up-link {
@@ -3428,6 +3461,15 @@ label.error {
   .section-title {
     font-size: 25px;
     margin-bottom: 25px;
+  }
+
+  .header .header-lang__elem {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .header .header-lang__elem:not(:last-child) {
+    margin-right: 7px;
   }
 
   .section-info {

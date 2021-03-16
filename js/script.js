@@ -27,7 +27,11 @@ $('.icon-menu').on('click', function () {
     $('.icon-menu').toggleClass('active');
     $('.header__mobile').slideToggle();
 });
-
+$('.header-lang__link').on('click', function (e) {
+    e.preventDefault()
+    $('.header-lang__link').removeClass('active')
+    $(this).addClass('active')
+})
 function equalWH(group) {
     var tallest = 0;
     group.each(function () {
@@ -124,7 +128,13 @@ $(function () {
         $.magnificPopup.close();
     });
 });
-
+function openPopup() {
+    jQuery.magnificPopup.open({
+        items: { src: '#popup_sucsess-2' },
+        type: 'inline',
+        closeBtnInside: false
+    });
+}
 // validate
 
 $('#validForm').validate({
@@ -262,8 +272,10 @@ $('#form-enter').validate({
             minlength: "В email миниму 5 символов"
         },
         password: { required: "Неверный пароль", }
-    }
+    },
+
 });
+
 $('#form-reg').validate({
     rules: {
         email: {
@@ -292,7 +304,10 @@ $('#form-reg').validate({
             required: "Неверный пароль",
             equalTo: 'пароли не совпадают'
         },
-    }
+    },
+    success: function (error) {
+        openPopup()
+    },
 });
 $('.input__phone').mask('000000000000');
 
