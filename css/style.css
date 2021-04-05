@@ -1981,6 +1981,17 @@ img.mfp-img {
   margin-bottom: 60px;
 }
 
+.cabinet-form__title--btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabinet-form__btn {
+  max-width: 200px;
+  padding: 10px;
+}
+
 .cabinet-form .form-accordion__name {
   background: #fff;
 }
@@ -2094,7 +2105,7 @@ img.mfp-img {
 
 .cabinet-form__table {
   margin: 0 auto;
-  width: 750px;
+  width: 780px;
   font-size: 16px;
   line-height: 30px;
 }
@@ -3450,6 +3461,24 @@ label.error {
 
   .footer__wrapper-logo {
     display: none;
+  }
+}
+
+@media (max-width: 568px) {
+  .cabinet-form__title--btn {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cabinet-form__title--btn span {
+    margin-bottom: 20px;
+  }
+
+  .cabinet-form__btn {
+    font-size: 12px;
+    line-height: 1;
+    max-width: 140px;
+    padding: 5;
   }
 }
 
